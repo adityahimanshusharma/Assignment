@@ -2,6 +2,7 @@
 
 // Using Express
 var express = require('express');
+const Database = require('./Database');
 
 // const port = 5000;
 
@@ -24,12 +25,13 @@ app.get('/', (req, res) => {
 
 // post request from client (client published data)
 app.post('/', (req, res) => {
+    // console.log(JSON.parse(req.body));
     console.log(Date(req.body.Epoch));
     console.log(req.body.Epoch);
     console.log(req.body.Value);
 
     // Call CSV update function
-
+    Database.ammend_csv(req.body.Epoch, req.body.Value);
 });
 
 /*
