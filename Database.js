@@ -2,7 +2,7 @@
 
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const csvWriter = createCsvWriter({
-    path: './db.csv',
+    path: './database.csv',
     header: [
         {id: 'epoch_time', title: 'EPOCH'},
         {id: 'value', title: 'DATA'}
