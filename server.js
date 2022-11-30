@@ -25,13 +25,10 @@ app.get('/', (req, res) => {
 
 // post request from client (client published data)
 app.post('/', (req, res) => {
-    // console.log(JSON.parse(req.body));
-    console.log(Date(req.body.Epoch));
-    console.log(req.body.Epoch);
-    console.log(req.body.Value);
-
+    console.log(req.body);
     // Call CSV update function
-    Database.ammend_csv(req.body.Epoch, req.body.Value);
+    Database.ammend_csv(req.body.Epoch, req.body.Value, Date(req.body.Epoch));
+    res.send('OK');
 });
 
 /*

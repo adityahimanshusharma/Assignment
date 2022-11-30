@@ -18,6 +18,10 @@ Edge Side:
 
 
 ========================================================
-To Run:
+To Run the server side:
 $ node server.js
+
+========================================================
+To run the Edge side:
+$ while true; do node Edge.js; sleep 2; done
 

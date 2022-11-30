@@ -4,16 +4,17 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const csvWriter = createCsvWriter({
     path: './database.csv',
     header: [
-        {id: 'epoch_time', title: 'EPOCH'},
+        { id: 'epoch_time', title: 'EPOCH' },
+        {id:'Time',title:'TIME'},
         {id: 'value', title: 'DATA'}
     ]
 });
 
 module.exports = {
-    ammend_csv: (column1_data, column2_data) => {
+    ammend_csv: (column1_data, column2_data, column3_data) => {
         // Check if the db.csv file is present. if not then create it.
         var records = [
-            { epoch_time: column1_data, value: column2_data }
+            { epoch_time: column1_data, value: column2_data, Time: column3_data }
         ];
         // if yes, Write the values to col1 & col2 in the csv file
 
