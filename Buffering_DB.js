@@ -1,15 +1,17 @@
 // Database will be delt here
 
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-const database_file = './database.csv';
+
+const database_file = './Buffering.csv';
+
 const csvWriter = createCsvWriter({
     path: database_file,
     header: [
-        { id: 'epoch_time', title: 'EPOCH' },
+        {id: 'epoch_time', title: 'EPOCH' },
         {id:'Time',title:'TIME'},
         {id: 'value', title: 'DATA'}
     ],
-    append: true,
+    append : true,
 });
 
 module.exports = {

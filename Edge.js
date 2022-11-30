@@ -1,8 +1,9 @@
 const axios = require("axios");
+const Local_DB = require('./Buffering_DB')
 const url = 'http://localhost:5000';
-
+var Tx_Count = 0;
+var Buffering_Count = 0;
 const base = 20.0;
-
 // Update data here
 send_data(getRandomArbitrary(base, base + 5));
 
@@ -17,8 +18,17 @@ async function send_data(val) {
         url: url,
         data: data
     })
-        .then(data => console.log(data.data))
-        .catch(err => console.log(err));
+        .then(data => {
+            console.log(data.data);
+            Tx_Count++;
+        })
+        .catch(err => {
+            // Call buffering function here.
+            console.log('Buffering data here!\t: ' + Date(Date.now()));
+            // Make a local file here!
+            Local_DB.ammend_csv(data.Epoch, data.Value, Date(data.Epoch));
+            Buffering_Count++;
+        });
 }
 
 

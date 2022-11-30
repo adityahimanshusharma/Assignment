@@ -28,7 +28,7 @@ app.post('/', (req, res) => {
     console.log(req.body);
     // Call CSV update function
     Database.ammend_csv(req.body.Epoch, req.body.Value, Date(req.body.Epoch));
-    res.send('OK');
+    res.send('Data Recieved on\t: ' + Date(Date.now()));
 });
 
 /*
