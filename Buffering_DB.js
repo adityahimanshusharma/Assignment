@@ -1,7 +1,9 @@
 // Database will be delt here
 
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-const database_file = './database.csv';
+
+const database_file = './Buffering.csv';
+
 const csvWriter = createCsvWriter({
     path: database_file,
     header: [
@@ -22,7 +24,7 @@ module.exports = {
 
         csvWriter.writeRecords(records)       // returns a promise
             .then(() => {
-                console.log('Done writing in ' + database_file);
+                // console.log('Done writing in ' + database_file);
             });
     }
 }
