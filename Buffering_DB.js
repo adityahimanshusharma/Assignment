@@ -7,11 +7,11 @@ const database_file = './Buffering.csv';
 const csvWriter = createCsvWriter({
     path: database_file,
     header: [
-        {id: 'epoch_time', title: 'EPOCH' },
-        {id:'Time',title:'TIME'},
-        {id: 'value', title: 'DATA'}
+        { id: 'epoch_time', title: 'EPOCH' },
+        { id: 'Time', title: 'TIME' },
+        { id: 'value', title: 'DATA' }
     ],
-    append : true,
+    append: true,
 });
 
 module.exports = {
@@ -23,8 +23,8 @@ module.exports = {
         // if yes, Write the values to col1 & col2 in the csv file
 
         csvWriter.writeRecords(records)       // returns a promise
-        .then(() => {
-            console.log('Done writing in ' + database_file);
-        });
+            .then(() => {
+                // console.log('Done writing in ' + database_file);
+            });
     }
 }
