@@ -1,6 +1,6 @@
-========================================================
+
 Server Side:
-========================================================
+
 1. Database.js (using JSON & csv-writer )
 	- This will be used for managing the CSV file with write and append operations.
 
@@ -9,22 +9,19 @@ Server Side:
 	- this will continously listen on the port 5000.
 	- this will do the managment of buffered data.
 
-========================================================
+To Run the server side:
+$ node server.js
+
+
 Edge Side:
-========================================================
-1. Edge.js ( using axios )
+
+1. Edge.js ( using axios)
     - this will send http post request to the server.
 	- Local buffering will be here.
 
 2. Buffering_DB.js
 	- This will be the local database for packets when buffering is being done.
 
-
-========================================================
-To Run the server side:
-$ node server.js
-
-========================================================
 To run the Edge side:
 $ while true; do node Edge.js; sleep 2; done
 
